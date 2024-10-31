@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/AppData/Local/Programs/Webots/lib/controller/python" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/enter_hallway" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/supervisor" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/supervisor_GA" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/wheelchair_V1_C" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

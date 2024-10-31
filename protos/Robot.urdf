@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<robot name="D:/Models/Robot.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0.26125 -0.17 -0.0725" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.6375"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.26125 -0.17 -0.0725" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.6375"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.26125 -0.17 -0.0725" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.6375"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.26125 -0.17 -0.0725" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.6375"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.24375 -0.241 0.0975" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.24375 -0.241 0.0975" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.24375 -0.241 0.0975" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.24375 -0.241 0.0975" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.26125 -0.48225 0.125" rpy="3.14159 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.26125 -0.48225 0.125" rpy="3.14159 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.26125 -0.48225 0.125" rpy="3.14159 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.26125 -0.48225 0.125" rpy="3.14159 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.26125 0 0.15" rpy="3.14159 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.4575"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.26125 0 0.15" rpy="3.14159 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.4575"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.26125 0 0.15" rpy="3.14159 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.4575"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.26125 0 0.15" rpy="3.14159 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.4575"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.26125 -0.24125 0.3725" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.26125 -0.24125 0.3725" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.26125 -0.24125 0.3725" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.26125 -0.24125 0.3725" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.5"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.26125 -0.545 0.015" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.1275"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.26125 -0.545 0.015" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.1275"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.26125 -0.545 0.015" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.1275"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.26125 -0.545 0.015" rpy="-1.570795 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.1275"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.26125 -0.65575 -0.0975" rpy="-0.3919 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.255"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.26125 -0.65575 -0.0975" rpy="-0.3919 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.255"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.26125 -0.65575 -0.0975" rpy="-0.3919 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.255"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.26125 -0.65575 -0.0975" rpy="-0.3919 0 0"/>
+      <geometry>
+        <cylinder radius="0.00875" length="0.255"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.24375 0.04225 0.375" rpy="3.02 0 0"/>
+      <geometry>
+        <cylinder radius="0.01125" length="0.53"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.24375 0.04225 0.375" rpy="3.02 0 0"/>
+      <geometry>
+        <cylinder radius="0.01125" length="0.53"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.24375 0.04225 0.375" rpy="3.02 0 0"/>
+      <geometry>
+        <cylinder radius="0.01125" length="0.53"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.24375 0.04225 0.375" rpy="3.02 0 0"/>
+      <geometry>
+        <cylinder radius="0.01125" length="0.53"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.24375 0.16725 0.625" rpy="-1.7 0 0"/>
+      <geometry>
+        <cylinder radius="0.015" length="0.2075"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.24375 0.16725 0.625" rpy="-1.7 0 0"/>
+      <geometry>
+        <cylinder radius="0.015" length="0.2075"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.24375 0.16725 0.625" rpy="-1.7 0 0"/>
+      <geometry>
+        <cylinder radius="0.015" length="0.2075"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.24375 0.16725 0.625" rpy="-1.7 0 0"/>
+      <geometry>
+        <cylinder radius="0.015" length="0.2075"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.24 0.1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.45 0.0175"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.24 0.1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.45 0.0175"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 -0.31 -0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.35 0.2"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.31 -0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.5 0.35 0.2"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0.027 0.3375" rpy="-1.692385 0 0"/>
+      <geometry>
+        <box size="0.5 0.45 0.0025"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.027 0.3375" rpy="-1.692385 0 0"/>
+      <geometry>
+        <box size="0.5 0.45 0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.26125 -0.24 0.2125" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.003 0.475 0.1725"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.26125 -0.24 0.2125" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.003 0.475 0.1725"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.26125 -0.24 0.2125" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.003 0.475 0.1725"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.26125 -0.24 0.2125" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.003 0.475 0.1725"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.19 -0.78 -0.1875" rpy="-0.3919 0 0"/>
+      <geometry>
+        <box size="0.1625 0.125 0.0175"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.19 -0.78 -0.1875" rpy="-0.3919 0 0"/>
+      <geometry>
+        <box size="0.1625 0.125 0.0175"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.19 -0.78 -0.1875" rpy="-0.3919 0 0"/>
+      <geometry>
+        <box size="0.1625 0.125 0.0175"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.19 -0.78 -0.1875" rpy="-0.3919 0 0"/>
+      <geometry>
+        <box size="0.1625 0.125 0.0175"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="camera">
+  </link>
+  <joint name="base_link_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera"/>
+    <origin xyz="0 0 -0.125" rpy="-1.570796 0 -3.141592"/>
+  </joint>
+  <link name="right IR">
+  </link>
+  <joint name="base_link_right IR_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right IR"/>
+    <origin xyz="-0.24375 -0.5 0.1" rpy="0 0 -1.691595"/>
+  </joint>
+  <link name="left IR">
+  </link>
+  <joint name="base_link_left IR_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left IR"/>
+    <origin xyz="0.24375 -0.5 0.1" rpy="0 0 -1.45"/>
+  </joint>
+  <joint name="hingejoint" type="continuous">
+    <parent link="base_link"/>
+    <child link="solid(3)"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.26125 -0.48225 -0.125" rpy="0 0 -1.982693"/>
+  </joint>
+  <link name="solid(3)">
+    <visual>
+      <origin xyz="0 0 -0.005" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.035 0.0375 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.005" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.035 0.0375 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hingejoint_0" type="continuous">
+    <parent link="solid(3)"/>
+    <child link="solid"/>
+    <axis xyz="1 0 0"/>
+    <origin xyz="0 0.04125 -0.1" rpy="2.865201 0 0"/>
+  </joint>
+  <link name="solid">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.075" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.075" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Small Wheel">
+  </link>
+  <joint name="solid_Small Wheel_joint" type="fixed">
+    <parent link="solid"/>
+    <child link="Small Wheel"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_14541540">
+  </link>
+  <joint name="Small Wheel_group_0_14541540_joint" type="fixed">
+    <parent link="Small Wheel"/>
+    <child link="group_0_14541540"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_2829873">
+  </link>
+  <joint name="Small Wheel_group_0_2829873_joint" type="fixed">
+    <parent link="Small Wheel"/>
+    <child link="group_0_2829873"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="obj_0">
+  </link>
+  <joint name="Small Wheel_obj_0_joint" type="fixed">
+    <parent link="Small Wheel"/>
+    <child link="obj_0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="Bracket">
+  </link>
+  <joint name="solid(3)_Bracket_joint" type="fixed">
+    <parent link="solid(3)"/>
+    <child link="Bracket"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_2829873_1">
+  </link>
+  <joint name="Bracket_group_0_2829873_1_joint" type="fixed">
+    <parent link="Bracket"/>
+    <child link="group_0_2829873_1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="obj_0_2">
+  </link>
+  <joint name="Bracket_obj_0_2_joint" type="fixed">
+    <parent link="Bracket"/>
+    <child link="obj_0_2"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="hingejoint_3" type="continuous">
+    <parent link="base_link"/>
+    <child link="solid(2)"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.26125 -0.48225 -0.125" rpy="0 0 -0.979337"/>
+  </joint>
+  <link name="solid(2)">
+    <visual>
+      <origin xyz="0 0 -0.005" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.035 0.0375 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.005" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.035 0.0375 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="hingejoint_4" type="continuous">
+    <parent link="solid(2)"/>
+    <child link="solid_5"/>
+    <axis xyz="1 0 0"/>
+    <origin xyz="0 0.04125 -0.1" rpy="-1.367208 0 0"/>
+  </joint>
+  <link name="solid_5">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.075" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.075" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Small Wheel_6">
+  </link>
+  <joint name="solid_5_Small Wheel_6_joint" type="fixed">
+    <parent link="solid_5"/>
+    <child link="Small Wheel_6"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_14541540_7">
+  </link>
+  <joint name="Small Wheel_6_group_0_14541540_7_joint" type="fixed">
+    <parent link="Small Wheel_6"/>
+    <child link="group_0_14541540_7"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_2829873_8">
+  </link>
+  <joint name="Small Wheel_6_group_0_2829873_8_joint" type="fixed">
+    <parent link="Small Wheel_6"/>
+    <child link="group_0_2829873_8"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="obj_0_9">
+  </link>
+  <joint name="Small Wheel_6_obj_0_9_joint" type="fixed">
+    <parent link="Small Wheel_6"/>
+    <child link="obj_0_9"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="Bracket_10">
+  </link>
+  <joint name="solid(2)_Bracket_10_joint" type="fixed">
+    <parent link="solid(2)"/>
+    <child link="Bracket_10"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_2829873_11">
+  </link>
+  <joint name="Bracket_10_group_0_2829873_11_joint" type="fixed">
+    <parent link="Bracket_10"/>
+    <child link="group_0_2829873_11"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="obj_0_12">
+  </link>
+  <joint name="Bracket_10_obj_0_12_joint" type="fixed">
+    <parent link="Bracket_10"/>
+    <child link="obj_0_12"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="right motor" type="continuous">
+    <parent link="base_link"/>
+    <child link="solid(1)"/>
+    <axis xyz="-1 -0.000003 0"/>
+    <limit effort="100" velocity="10"/>
+    <origin xyz="-0.3215 0 0" rpy="0.964767 0.000002 3.141591"/>
+  </joint>
+  <link name="solid(1)">
+    <visual>
+      <origin xyz="-0.025 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.3" length="0.025"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.025 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.3" length="0.025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0175 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.235" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0175 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.235" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Big Wheel">
+  </link>
+  <joint name="solid(1)_Big Wheel_joint" type="fixed">
+    <parent link="solid(1)"/>
+    <child link="Big Wheel"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_14541540_13">
+  </link>
+  <joint name="Big Wheel_group_0_14541540_13_joint" type="fixed">
+    <parent link="Big Wheel"/>
+    <child link="group_0_14541540_13"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_2829873_14">
+  </link>
+  <joint name="Big Wheel_group_0_2829873_14_joint" type="fixed">
+    <parent link="Big Wheel"/>
+    <child link="group_0_2829873_14"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="obj_0_15">
+  </link>
+  <joint name="Big Wheel_obj_0_15_joint" type="fixed">
+    <parent link="Big Wheel"/>
+    <child link="obj_0_15"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="left motor" type="continuous">
+    <parent link="base_link"/>
+    <child link="solid_16"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="100" velocity="10"/>
+    <origin xyz="0.3215 0 0" rpy="1.987908 0 0"/>
+  </joint>
+  <link name="solid_16">
+    <visual>
+      <origin xyz="-0.025 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.3" length="0.025"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.025 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.3" length="0.025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0175 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.235" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0175 0 0" rpy="0 -1.570795 0"/>
+      <geometry>
+        <cylinder radius="0.235" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Big Wheel_17">
+  </link>
+  <joint name="solid_16_Big Wheel_17_joint" type="fixed">
+    <parent link="solid_16"/>
+    <child link="Big Wheel_17"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_14541540_18">
+  </link>
+  <joint name="Big Wheel_17_group_0_14541540_18_joint" type="fixed">
+    <parent link="Big Wheel_17"/>
+    <child link="group_0_14541540_18"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_2829873_19">
+  </link>
+  <joint name="Big Wheel_17_group_0_2829873_19_joint" type="fixed">
+    <parent link="Big Wheel_17"/>
+    <child link="group_0_2829873_19"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="obj_0_20">
+  </link>
+  <joint name="Big Wheel_17_obj_0_20_joint" type="fixed">
+    <parent link="Big Wheel_17"/>
+    <child link="obj_0_20"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="Chassis">
+  </link>
+  <joint name="base_link_Chassis_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="Chassis"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_16448250">
+  </link>
+  <joint name="Chassis_group_0_16448250_joint" type="fixed">
+    <parent link="Chassis"/>
+    <child link="group_0_16448250"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="group_0_2829873_21">
+  </link>
+  <joint name="Chassis_group_0_2829873_21_joint" type="fixed">
+    <parent link="Chassis"/>
+    <child link="group_0_2829873_21"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="obj_0_22">
+  </link>
+  <joint name="Chassis_obj_0_22_joint" type="fixed">
+    <parent link="Chassis"/>
+    <child link="obj_0_22"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,887 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.37730361283160374 -0.02316266733004731 0.9257999106644895 3.255147698465721
+  position 5.427484452986117 2.783219137013111 4.427291607018911
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 5 8
+}
+Robot {
+  children [
+    Emitter {
+      channel 1
+    }
+    Receiver {
+      channel 2
+    }
+  ]
+  name "Supervisor"
+  controller "supervisor_GA"
+  supervisor TRUE
+}
+Wall {
+  translation 0 0.8 0
+  rotation 0 0 1 -1.5707953071795862
+  size 0.1 5 1.1
+}
+Wall {
+  translation -1.5 -0.8 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(1)"
+  size 0.1 2 1.1
+}
+Wall {
+  translation 1.5 -0.8 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(2)"
+  size 0.1 2 1.1
+}
+DEF Wheelchair_Robot Robot {
+  translation 1.92999 2.37 0.33
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    DistanceSensor {
+      translation -0.33 0 0
+      rotation 0 0 1 3.141592653589793
+      name "r1"
+      lookupTable [
+        0 1000 0
+        0.3 750 0
+        0.5 500 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.33 0 0
+      name "l1"
+      lookupTable [
+        0 1000 0
+        0.3 750 0
+        0.5 500 0
+      ]
+    }
+    Receiver {
+      channel 1
+    }
+    Emitter {
+      channel 2
+    }
+    Pose {
+      translation 0.26125 -0.17 -0.0725
+      rotation -1 0 0 1.570795
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.6375
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.26125 -0.17 -0.0725
+      rotation -1 0 0 1.570795
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.6375
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.24375 -0.241 0.0975
+      rotation -1 0 0 1.570795
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.24375 -0.241 0.0975
+      rotation -1 0 0 1.570795
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.26125 -0.48225 0.125
+      rotation 1 0 0 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.26125 -0.48225 0.125
+      rotation 1 0 0 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.26125 0 0.15
+      rotation 1 0 0 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.4575
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.26125 0 0.15
+      rotation 1 0 0 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.4575
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.26125 -0.24125 0.3725
+      rotation -1 0 0 1.570795
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.26125 -0.24125 0.3725
+      rotation -1 0 0 1.570795
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.26125 -0.545 0.015
+      rotation -1 0 0 1.570795
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.1275
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.26125 -0.545 0.015
+      rotation -1 0 0 1.570795
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.1275
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.26125 -0.65575 -0.0975
+      rotation -1 0 0 0.3919
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.255
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.26125 -0.65575 -0.0975
+      rotation -1 0 0 0.3919
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.255
+            radius 0.00875
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.24375 0.04225 0.375
+      rotation 1 0 0 3.02
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.53
+            radius 0.01125
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.24375 0.04225 0.375
+      rotation 1 0 0 3.02
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.53
+            radius 0.01125
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.24375 0.16725 0.625
+      rotation -1 0 0 1.7
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.2075
+            radius 0.015
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.24375 0.16725 0.625
+      rotation -1 0 0 1.7
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.2075
+            radius 0.015
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 -0.24 0.1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.5 0.45 0.0175
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 -0.31 -0.012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.5 0.35 0.2
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0.027 0.3375
+      rotation -1 0 0 1.692385
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.5 0.45 0.0025
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.26125 -0.24 0.2125
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.003 0.475 0.1725
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.26125 -0.24 0.2125
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.003 0.475 0.1725
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.19 -0.78 -0.1875
+      rotation -1 0 0 0.3919
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1625 0.125 0.0175
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.19 -0.78 -0.1875
+      rotation -1 0 0 0.3919
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1625 0.125 0.0175
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1
+        axis 0 0 1
+        anchor -0.262 -0.48 -0.125
+      }
+      device [
+        PositionSensor {
+          name "hingejoint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.262 -0.48 -0.145
+        rotation 0.009345431740064468 0.01423395509704 0.9998550182040831 0.020713209118507627
+        children [
+          Pose {
+            translation 0 0 -0.005
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.5 0.5 0.5
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.035 0.0375 0.01
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0 0 -0.1
+            }
+            device [
+              PositionSensor {
+                name "hingejoint_0_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 -0.1
+              rotation 0.4323103724479907 -0.7913380218742093 -0.4323099316579405 1.8027178887650352
+              children [
+                Pose {
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.5 0.5 0.5
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.015
+                        radius 0.075
+                      }
+                    }
+                  ]
+                }
+              ]
+              boundingObject Cylinder {
+                height 0.015
+                radius 0.075
+              }
+              physics Physics {
+              }
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject Box {
+          size 0.035 0.0375 0.01
+        }
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1
+        axis 0 0 1
+        anchor 0.262 -0.48 -0.125
+      }
+      device [
+        PositionSensor {
+          name "hingejoint_3_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.262 -0.48 -0.144633
+        rotation 0.009345431740664089 0.014233955097953251 0.9998550182040644 0.020713209118228902
+        children [
+          Pose {
+            translation 0 0 -0.005
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.5 0.5 0.5
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.035 0.0375 0.01
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 1
+              anchor 0 0 -0.1
+            }
+            device [
+              PositionSensor {
+                name "hingejoint_4_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 -0.1
+              rotation 0.43231037244799086 -0.791338021874209 -0.43230993165794046 1.802717888765034
+              children [
+                Pose {
+                  rotation 1 0 0 3.14159
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.5 0.5 0.5
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.015
+                        radius 0.075
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "solid_5"
+              boundingObject Cylinder {
+                height 0.015
+                radius 0.075
+              }
+              physics Physics {
+              }
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject Box {
+          size 0.035 0.0375 0.01
+        }
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "right motor"
+          maxTorque 100
+        }
+        PositionSensor {
+          name "right motor_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.3 0 0
+        rotation -1.1775671812919278e-16 -1 3.925223937639759e-17 1.570799999999999
+        children [
+          Pose {
+            rotation 0 1 0 3.14159
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.5 0.5 0.5
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.025
+                  radius 0.3
+                }
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 0.0175
+            rotation 0 1 0 3.14159
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.5 0.5 0.5
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.015
+                  radius 0.235
+                }
+              }
+            ]
+          }
+        ]
+        name "solid(1)"
+        boundingObject Group {
+          children [
+            Cylinder {
+              height 0.025
+              radius 0.3
+            }
+            Cylinder {
+              height 0.015
+              radius 0.235
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        RotationalMotor {
+          name "left motor"
+          maxTorque 100
+        }
+        PositionSensor {
+          name "left motor_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.2999999999999999 0 0
+        rotation -1.962612269197024e-17 -1 -9.81306134598512e-18 1.5707996938995736
+        children [
+          Pose {
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.5 0.5 0.5
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.025
+                  radius 0.3
+                }
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 -0.025
+            rotation 0 0 1 1.570795
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.5 0.5 0.5
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.015
+                  radius 0.235
+                }
+              }
+            ]
+          }
+        ]
+        name "solid_16"
+        boundingObject Group {
+          children [
+            Cylinder {
+              height 0.025
+              radius 0.3
+            }
+            Cylinder {
+              height 0.015
+              radius 0.235
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "Wheelchair"
+  boundingObject Group {
+    children [
+      Cylinder {
+        height 0.1
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.1
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.5
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.5
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.5
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.5
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.4575
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.4575
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.5
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.5
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.1275
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.1275
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.255
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.255
+        radius 0.00875
+      }
+      Cylinder {
+        height 0.53
+        radius 0.01125
+      }
+      Cylinder {
+        height 0.53
+        radius 0.01125
+      }
+      Cylinder {
+        height 0.2075
+        radius 0.015
+      }
+      Cylinder {
+        height 0.2075
+        radius 0.015
+      }
+      Box {
+        size 0.5 0.45 0.0175
+      }
+      Box {
+        size 0.5 0.35 0.2
+      }
+      Box {
+        size 0.5 0.45 0.0025
+      }
+      Box {
+        size 0.003 0.475 0.1725
+      }
+      Box {
+        size 0.003 0.475 0.1725
+      }
+      Box {
+        size 0.1625 0.125 0.0175
+      }
+      Box {
+        size 0.1625 0.125 0.0175
+      }
+    ]
+  }
+  physics Physics {
+    centerOfMass [
+      0 -0.3 0
+    ]
+  }
+  controller "enter_hallway"
+}
