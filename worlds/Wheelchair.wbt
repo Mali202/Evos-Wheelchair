@@ -8,8 +8,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.37730361283160374 -0.02316266733004731 0.9257999106644895 3.255147698465721
-  position 5.427484452986117 2.783219137013111 4.427291607018911
+  orientation -0.6166326731525654 -0.009327293187826156 0.7871957494819886 3.165410633762349
+  position 2.8836162335181377 0.22794187176419645 6.291031163812442
 }
 TexturedBackground {
 }
@@ -49,26 +49,85 @@ Wall {
   size 0.1 2 1.1
 }
 DEF Wheelchair_Robot Robot {
-  translation 1.92999 2.37 0.33
-  rotation 0 0 1 -1.5707953071795862
+  translation 1.5 0 0.34
+  rotation 0 0 1 1.5708
   children [
     DistanceSensor {
-      translation -0.33 0 0
-      rotation 0 0 1 3.141592653589793
-      name "r1"
+      translation -0.26 0.27 0.62
+      rotation 0 0 1 1.5707896938995747
+      name "r4"
       lookupTable [
-        0 1000 0
-        0.3 750 0
-        0.5 500 0
+        0 0 0
+        0.3 0.3 0
+        0.5 0.5 0
       ]
     }
     DistanceSensor {
-      translation 0.33 0 0
+      translation -0.26 0.27 0.62
+      rotation 0 0 1 3.141592653589793
+      name "r3"
+      lookupTable [
+        0 0 0
+        0.3 0.3 0
+        0.5 0.5 0
+      ]
+    }
+    DistanceSensor {
+      translation -0.26 -0.6 0.03
+      rotation 0 0 1 -1.5707996938995747
+      name "r2"
+      lookupTable [
+        0 0 0
+        0.3 0.3 0
+        0.5 0.5 0
+      ]
+    }
+    DistanceSensor {
+      translation -0.26 -0.6 0.03
+      rotation 0 0 1 3.141592653589793
+      name "r1"
+      lookupTable [
+        0 0 0
+        0.3 0.3 0
+        0.5 0.5 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.26 0.27 0.62
+      rotation 0 0 1 1.5707996938995747
+      name "l4"
+      lookupTable [
+        0 0 0
+        0.3 0.3 0
+        0.5 0.5 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.26 0.27 0.62
+      name "l3"
+      lookupTable [
+        0 0 0
+        0.3 0.3 0
+        0.5 0.5 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.26 -0.6 0.03
+      rotation 0 0 1 -1.5707996938995747
+      name "l2"
+      lookupTable [
+        0 0 0
+        0.3 0.3 0
+        0.5 0.5 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.26 -0.6 0.03
       name "l1"
       lookupTable [
-        0 1000 0
-        0.3 750 0
-        0.5 500 0
+        0 0 0
+        0.3 0.3 0
+        0.5 0.5 0
       ]
     }
     Receiver {
@@ -504,7 +563,7 @@ DEF Wheelchair_Robot Robot {
       ]
       endPoint Solid {
         translation -0.262 -0.48 -0.145
-        rotation 0.009345431740064468 0.01423395509704 0.9998550182040831 0.020713209118507627
+        rotation 0.009345431740065144 0.014233955097041017 0.999855018204083 0.020713209118421866
         children [
           Pose {
             translation 0 0 -0.005
@@ -532,7 +591,7 @@ DEF Wheelchair_Robot Robot {
             ]
             endPoint Solid {
               translation 0 0 -0.1
-              rotation 0.4323103724479907 -0.7913380218742093 -0.4323099316579405 1.8027178887650352
+              rotation 0.43231037244799037 -0.7913380218742093 -0.4323099316579407 1.802717888765035
               children [
                 Pose {
                   children [
@@ -580,7 +639,7 @@ DEF Wheelchair_Robot Robot {
       ]
       endPoint Solid {
         translation 0.262 -0.48 -0.144633
-        rotation 0.009345431740664089 0.014233955097953251 0.9998550182040644 0.020713209118228902
+        rotation 0.009345431740660302 0.014233955097947497 0.9998550182040645 0.020713209118228902
         children [
           Pose {
             translation 0 0 -0.005
@@ -609,7 +668,7 @@ DEF Wheelchair_Robot Robot {
             ]
             endPoint Solid {
               translation 0 0 -0.1
-              rotation 0.43231037244799086 -0.791338021874209 -0.43230993165794046 1.802717888765034
+              rotation 0.4323103724479922 -0.7913380218742085 -0.43230993165794035 1.80271788876503
               children [
                 Pose {
                   rotation 1 0 0 3.14159
@@ -652,6 +711,7 @@ DEF Wheelchair_Robot Robot {
       device [
         RotationalMotor {
           name "right motor"
+          maxVelocity 50
           maxTorque 100
         }
         PositionSensor {
@@ -659,8 +719,8 @@ DEF Wheelchair_Robot Robot {
         }
       ]
       endPoint Solid {
-        translation -0.3 0 0
-        rotation -1.1775671812919278e-16 -1 3.925223937639759e-17 1.570799999999999
+        translation -0.29999999999999977 0 0
+        rotation 0 -1 -7.850447875279517e-17 1.5708
         children [
           Pose {
             rotation 0 1 0 3.14159
@@ -719,6 +779,7 @@ DEF Wheelchair_Robot Robot {
       device [
         RotationalMotor {
           name "left motor"
+          maxVelocity 50
           maxTorque 100
         }
         PositionSensor {
@@ -727,7 +788,7 @@ DEF Wheelchair_Robot Robot {
       ]
       endPoint Solid {
         translation 0.2999999999999999 0 0
-        rotation -1.962612269197024e-17 -1 -9.81306134598512e-18 1.5707996938995736
+        rotation 4.1214857653137516e-16 -1 3.9252245383940494e-17 1.5707996938995734
         children [
           Pose {
             children [

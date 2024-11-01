@@ -31,8 +31,8 @@ class WheelchairSupervisor:
                 "Supervisor: Could not find robot node. Ensure the robot has a DEF name 'Wheelchair_Robot'.")
 
         # Initialize the DE model
-        self.model = Model(num_params=30, pop_size=10, crossover_rate=0.8, alpha=0.5, mutation_rate=0.1,
-                           mutation_magnitude=0.1, tournament_size=3, elitism_rate=0.1)
+        self.model = Model(num_params=30, pop_size=10, crossover_rate=0.8, alpha=0.9, mutation_rate=0.1,
+                           mutation_magnitude=0.1, tournament_size=3, elitism_rate=0.2)
 
     def send_moves(self, moves):
         """
@@ -111,17 +111,21 @@ class WheelchairSupervisor:
 
     def run(self):
         gens = 5
-
+        fitness_results = []
         for gen in range(gens):
             print(f"Supervisor: Evaluating generation {gen}")
 
             # Evaluate the fitness of the current population
             self.evaluate_population()
 
+            fitness_results.append(np.min(self.model.fitness))
             # Evolve the population
-            #self.model.evolve_gen()
+            self.model.evolve_gen()
 
             print(f"Supervisor: Completed generation {gen}, Best Fitness = {np.min(self.model.fitness)}")
+
+        print(f"Supervisor: Best Fitness Results: {fitness_results}")
+        print("Supervisor: Best Individual: ", self.model.population[np.argmin(self.model.fitness)])
 
 
 # Main function

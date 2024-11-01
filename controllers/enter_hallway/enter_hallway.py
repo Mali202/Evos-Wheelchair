@@ -29,20 +29,32 @@ class WheelchairRobot:
 
         # Initialize pairs of distance sensors
         self.distance_sensors = []
-        self.distance_sensors.append({'x': self.robot.getDistanceSensor('l1'), 'y': self.robot.getDistanceSensor('l4')})
-        self.distance_sensors.append({'x': self.robot.getDistanceSensor('l2'), 'y': self.robot.getDistanceSensor('l3')})
-        self.distance_sensors.append({'x': self.robot.getDistanceSensor('r1'), 'y': self.robot.getDistanceSensor('r4')})
-        self.distance_sensors.append({'x': self.robot.getDistanceSensor('r2'), 'y': self.robot.getDistanceSensor('r4')})
+        self.distance_sensors.append({'x': self.robot.getDistanceSensor('l1'), 'y': self.robot.getDistanceSensor('l2')})
+        self.distance_sensors.append({'x': self.robot.getDistanceSensor('l3'), 'y': self.robot.getDistanceSensor('l4')})
+        self.distance_sensors.append({'x': self.robot.getDistanceSensor('r1'), 'y': self.robot.getDistanceSensor('r2')})
+        self.distance_sensors.append({'x': self.robot.getDistanceSensor('r3'), 'y': self.robot.getDistanceSensor('r4')})
+
+        # Enable the distance sensors
+        for sensor_pair in self.distance_sensors:
+            sensor_pair['x'].enable(self.time_step)
+            sensor_pair['y'].enable(self.time_step)
+
+        self.boundary = 0.3
 
     def execute_moves(self, moves):
         """
         Execute a series of moves provided by the supervisor.
         Each move is a dictionary with 'left_pwm', 'right_pwm', and 'duration'.
         """
+        safety_penalty = 0
+        duration_sum = 0
+        door_penalty = 0
         for move in moves:
             left_pwm = move['left_pwm']
             right_pwm = move['right_pwm']
             duration = move['duration']
+
+            duration_sum += duration
 
             # Convert PWM to a velocity value suitable for Webots (may require calibration)
             left_velocity = left_pwm / 3.3  # Scale the pwm to a velocity value.
@@ -60,12 +72,26 @@ class WheelchairRobot:
                 if self.robot.step(self.time_step) == -1:
                     break
 
+                # Check if the robot is close to the boundary
+                for sensor in self.distance_sensors:
+                    x = sensor['x'].getValue()
+                    y = sensor['y'].getValue()
+                    h = calculate_altitude(x, y)
+                    if h < self.boundary:
+                        safety_penalty += 10
+
+                left = self.distance_sensors[0]['x'].getValue()
+                right = self.distance_sensors[0]['y'].getValue()
+                if 0 < self.distance_sensors[0]['x'].getValue() < 0.34 and 0 < self.distance_sensors[0]['y'].getValue() < 0.34:
+                    door_penalty = abs(left - right) * 100
+
         # Stop the motors after finishing the moves
         self.left_motor.setVelocity(0)
         self.right_motor.setVelocity(0)
 
+        fitness = safety_penalty + duration_sum + door_penalty
         # Notify the supervisor that the movements are complete
-        self.notify_supervisor()
+        self.notify_supervisor(fitness)
 
     def wait_for_moves(self):
         """
@@ -81,26 +107,30 @@ class WheelchairRobot:
 
                 # Convert the message string back into a list of moves
                 try:
-                    _moves = ast.literal_eval(message)
-                    return _moves
+                    moves = ast.literal_eval(message)
+                    return moves
                 except (ValueError, SyntaxError) as e:
                     print(f"Robot: Error parsing moves: {e}")
 
         return None
 
-    def notify_supervisor(self):
+    def notify_supervisor(self, fitness):
         """
         Calculates the fitness based on the distance from start to end position.
         Sends the fitness score to the supervisor.
         """
         # Send fitness score to supervisor
-        fitness_score = self.fitness_function()
-        message = f"fitness:{fitness_score}"
+        message = f"fitness:{fitness}"
         self.emitter.send(message.encode('utf-8'))
-        print(f"Robot: Sent fitness score to supervisor: {fitness_score}")
+        print(f"Robot: Sent fitness score to supervisor: {fitness}")
 
-    def fitness_function(self):
-        return 0
+
+def calculate_altitude(a, b):
+    # Calculate the hypotenuse c
+    c = math.sqrt(a * 2 + b * 2)
+
+    # Calculate h using the given formula
+    return math.sqrt((a * 2) / (1 + (1 / (math.tan(b / c) * 2))))
 
 
 # Main function
@@ -108,21 +138,11 @@ if __name__ == "__main__":
     # Create the robot instance
     wheelchair_robot = WheelchairRobot()
 
-    # Wait for the list of moves from the supervisor
-    _moves = wheelchair_robot.wait_for_moves()
+    # Continuously wait for moves, execute them, and notify the supervisor
+    while True:
+        # Wait for the list of moves from the supervisor
+        _moves = wheelchair_robot.wait_for_moves()
 
-    # If moves are successfully received, execute them
-    if _moves:
-        wheelchair_robot.execute_moves(_moves)
-
-
-def calculate_altitude(a, b):
-    # Calculate hypotenuse c using Pythagorean theorem
-    c = math.sqrt(a * 2 + b * 2)
-
-    # Calculate area of the triangle
-    area = (a * b) / 2
-
-    # Calculate altitude h with area = 1/2 * base * height
-    h = (2 * area) / c
-    return h
+        # If moves are successfully received, execute them
+        if _moves:
+            wheelchair_robot.execute_moves(_moves)

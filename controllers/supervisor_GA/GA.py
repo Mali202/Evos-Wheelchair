@@ -1,6 +1,5 @@
 import numpy
 import numpy as np
-from numba import njit
 
 
 class Model:
@@ -78,4 +77,7 @@ class Model:
 
 
 def initPopulation(size, num_params):
-    return np.random.rand(size, num_params) * 10
+    guess = np.loadtxt('guess.txt')
+    init = np.random.rand(size, num_params) * 10
+    init[0] = guess
+    return init
