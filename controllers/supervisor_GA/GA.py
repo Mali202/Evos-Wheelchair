@@ -4,7 +4,7 @@ import numpy as np
 
 class Model:
 
-    def __init__(self, num_params: int, pop_size: int, init_set=None, **params):
+    def __init__(self, num_params: int, pop_size: int, **params):
         self.population = initPopulation(pop_size, num_params)
         self.crossover_rate = params['crossover_rate']
         self.alpha = params['alpha']
@@ -52,9 +52,9 @@ class Model:
         for i in range(individual.shape[0]):
             mutation_value = np.random.normal(0, self.mutation_magnitude)
             if np.random.rand() < 0.5:
-                individual[i] = max(0.0, individual[i] + mutation_value)
+                individual[i] += mutation_value
             else:
-                individual[i] = max(0.0, individual[i] - mutation_value)
+                individual[i] -= mutation_value
 
         return individual
 
@@ -70,14 +70,24 @@ class Model:
             low = lower_bound - self.alpha * range_val
             high = upper_bound + self.alpha * range_val
 
-            child1[i] = max(0.0, np.random.uniform(low, high))
-            child2[i] = max(0.0, np.random.uniform(low, high))
+            child1[i] = np.random.uniform(low, high)
+            child2[i] = np.random.uniform(low, high)
 
         return child1, child2
 
 
 def initPopulation(size, num_params):
     guess = np.loadtxt('guess.txt')
-    init = np.random.rand(size, num_params) * 10
+    init = np.zeros((size, num_params))
+
+    # Initialize PWM and duration values within specified ranges
+    for individual in init:
+        for i in range(0, num_params, 3):  # Left PWM in triplet
+            individual[i] = np.random.uniform(-10, 10)
+        for i in range(1, num_params, 3):  # Right PWM in triplet
+            individual[i] = np.random.uniform(-10, 10)
+        for i in range(2, num_params, 3):  # Duration in triplet
+            individual[i] = np.random.uniform(0, 5)
+
     init[0] = guess
     return init

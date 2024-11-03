@@ -32,7 +32,7 @@ class WheelchairSupervisor:
 
         # Initialize the DE model
         self.model = Model(num_params=30, pop_size=10, crossover_rate=0.8, alpha=0.9, mutation_rate=0.1,
-                           mutation_magnitude=0.1, tournament_size=3, elitism_rate=0.2)
+                           mutation_magnitude=1, tournament_size=4, elitism_rate=0.2)
 
     def send_moves(self, moves):
         """
@@ -42,7 +42,7 @@ class WheelchairSupervisor:
         # Convert the list of moves to a string for simplicity in communication
         message = str(moves)
         self.emitter.send(message.encode('utf-8'))
-        print(f"Supervisor: Sent moves to robot: {message}")
+        print(f"Supervisor: Sent moves to robot")
 
     def wait_for_completion(self):
         """
@@ -69,6 +69,7 @@ class WheelchairSupervisor:
             self.robot_node.getField("translation").setSFVec3f(self.initial_translation)
             # Reset rotation
             self.robot_node.getField("rotation").setSFRotation(self.initial_rotation)
+
             # Reset the robot's velocity if needed (optional)
             self.robot_node.resetPhysics()
         else:
@@ -96,11 +97,16 @@ class WheelchairSupervisor:
         """
         fitness_scores = []
         for i in range(self.model.population.shape[0]):
+            print(f"Supervisor: Evaluating individual {i}")
             # Send the individual's moves to the robot
             self.send_moves(transform_to_moves(self.model.population[i]))
 
             # Wait for the fitness score from the robot
             fitness_score = self.wait_for_fitness()
+
+            # Get distance of robot from checkpoint and add to fitness score
+            fitness_score += self.get_distance_from_checkpoint() * 20
+            print(f"Supervisor: Total fitness: {fitness_score}")
             fitness_scores.append(fitness_score)
 
             # Reset robot after each individual evaluation
@@ -109,23 +115,40 @@ class WheelchairSupervisor:
         # Assign fitness scores to the population
         self.model.fitness = np.array(fitness_scores)
 
+    def get_distance_from_checkpoint(self):
+        # Get the robot's position
+        robot_translation = self.robot_node.getField("translation").getSFVec3f()
+        # Calculate the distance from the checkpoint
+        distance = np.linalg.norm(np.array(robot_translation) - np.array([1.4, -1, 0.34]))
+        print(f"Supervisor: Distance from checkpoint: {distance}")
+        return distance
+
     def run(self):
-        gens = 5
-        fitness_results = []
+        gens = 1000
+        best_fitness = []
+        mean_fitness = []
         for gen in range(gens):
             print(f"Supervisor: Evaluating generation {gen}")
 
             # Evaluate the fitness of the current population
             self.evaluate_population()
 
-            fitness_results.append(np.min(self.model.fitness))
+            best_fitness.append(np.min(self.model.fitness))
+            mean_fitness.append(np.mean(self.model.fitness))
             # Evolve the population
             self.model.evolve_gen()
 
-            print(f"Supervisor: Completed generation {gen}, Best Fitness = {np.min(self.model.fitness)}")
+            print(f"Supervisor: Completed generation {gen}, Best Fitness = {np.min(self.model.fitness)}, Average "
+                  f"Fitness = {np.mean(self.model.fitness)}")
 
-        print(f"Supervisor: Best Fitness Results: {fitness_results}")
+            # save the best individual and the mean fitness every 50 generations
+            if gen % 50 == 0:
+                np.savetxt("best_results.txt", best_fitness)
+                np.savetxt("mean_results.txt", mean_fitness)
+
         print("Supervisor: Best Individual: ", self.model.population[np.argmin(self.model.fitness)])
+        np.savetxt("best_results.txt", best_fitness)
+        np.savetxt("mean_results.txt", mean_fitness)
 
 
 # Main function

@@ -39,7 +39,7 @@ class WheelchairRobot:
             sensor_pair['x'].enable(self.time_step)
             sensor_pair['y'].enable(self.time_step)
 
-        self.boundary = 0.3
+        self.boundary = 0.4
 
     def execute_moves(self, moves):
         """
@@ -78,11 +78,11 @@ class WheelchairRobot:
                     y = sensor['y'].getValue()
                     h = calculate_altitude(x, y)
                     if h < self.boundary:
-                        safety_penalty += 10
+                        safety_penalty += 5
 
                 left = self.distance_sensors[0]['x'].getValue()
                 right = self.distance_sensors[0]['y'].getValue()
-                if 0 < self.distance_sensors[0]['x'].getValue() < 0.34 and 0 < self.distance_sensors[0]['y'].getValue() < 0.34:
+                if 0 < left < 0.36 and 0 < right < 0.36:
                     door_penalty = abs(left - right) * 100
 
         # Stop the motors after finishing the moves
